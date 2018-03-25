@@ -1,0 +1,135 @@
+header {
+  min-height: 8em;
+  height: 20vw;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: all 0.5s ease;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+  z-index: 1000;
+  background: $cColor;
+  background-size: cover;
+  overflow: hidden;
+
+  & > div {
+    transition: all 0.5s ease;
+    padding: 0.5em 2em 1em;
+    height: 100%;
+    box-sizing: border-box;
+    background: transparent;
+  }
+  a {
+    height: 100%;
+    width: auto;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  a:hover {
+    background: none;
+  }
+  .logo-svg {
+    width: 20%;
+    max-width: 20em;
+    min-width: 8em;
+    height: 0;
+    margin-top: 0.4rem;
+    padding-top: 57.31%;
+    position: relative;
+    transition: all 0.5s ease;
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      fill: $cNegro;
+      max-height: 20%;
+      transition: all 0.5s ease;
+    }
+  }
+  .menu-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000;
+    font-size: 3em;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    margin: 0;
+    padding: .5rem 0 1.5rem 3.5rem;
+  }
+
+  &.fixed {
+    min-height: 6em;
+    height: 10vw;
+
+    & > div {
+      background: $cColor;
+    }
+    .logo-svg {
+      // width: 5em;
+      min-width: 6em;
+      width: 10vw;
+      svg {
+        max-height: 4em;
+      }
+    }
+    .menu {
+      width: 20em;
+    }
+  }
+}
+
+amp-sidebar {
+  background: $cColor;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 28% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 28% 100%);
+}
+.i-amphtml-sidebar-mask {
+    opacity: 0.7;
+}
+.menu {
+  a {
+    display: block;
+    color: $cNegro;
+    padding: 0.02em;
+    line-height: 1;
+    margin: 0.8em;
+    margin-left: 2em;
+    font-size: 2em;
+    height: auto;
+    text-align: right;
+    font-family: $font2;
+
+    &:hover {
+      background: initial;
+      color: initial;
+    }
+  }
+
+  .menu-toggle {
+    position: relative;
+    color: #000;
+    font-size: 3em;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    margin: 0;
+    padding: .5rem 0;
+  }
+
+  &.open {
+    width: 20em;
+  }
+}
+
+@media (min-width: 600px) {
+  .menu {
+    &.open{
+      width: 25vw;
+    }
+
+    a {
+      font-size: 3em;
+    }
+  }
+}

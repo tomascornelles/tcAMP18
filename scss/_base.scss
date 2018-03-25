@@ -1,0 +1,82 @@
+body {
+  font-family:$font1;
+  background: #fff;
+  color: #000;
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font2;
+  font-weight: 400;
+}
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2.6em;
+}
+h3 {
+  font-size: 2.2em;
+}
+h4 {
+  font-size: 2.0em;
+}
+h5 {
+  font-size: 1.8em;
+}
+h6 {
+  font-size: 1.6em;
+}
+p {
+  font-size: 1.6em;
+  line-height: 1.5;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+blockquote {
+  font-style: italic;
+  color: $cGris;
+  position: relative;
+  margin-right: 0;
+  &::before {
+    font-family: 'tc2018';
+    content: '\e900';
+    position: absolute;
+    left: -0.7em;
+    font-size: 5em;
+    color: lighten($cGris, $amount: 32%);
+    top: 0;
+    z-index: -1;
+  }
+}
+.container-i {
+  max-width: 1200px;
+  padding: 0 2em;
+  margin: 0 auto;
+}
+.container-c {
+  max-width: 800px;
+  padding: 0 2em;
+  margin: 0 auto;
+}
+.main {
+  margin-top: 20em;
+  margin-top: 25vw;
+  background: $cBlanco;
+  margin-bottom: 8em;
+  padding-bottom: 8em;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+  background: $cBlanco;
+  overflow: hidden;
+}
+@media (min-width: 600px) {
+  body {
+    font-size: 10px;
+  }
+}

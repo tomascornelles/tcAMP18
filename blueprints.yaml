@@ -1,0 +1,59 @@
+name: tcAMP18
+description: "TC2018 theme for **Grav** with **AMP**"
+version: 0.1.0
+icon: bolt
+author:
+  name: Tomás Cornelles
+  email: tomascornelles@gmail.com
+  url: https://tomascornelles.com
+keywords: grav, theme, core, modern, fast, responsive, html5, css3, amp
+bugs: https://github.com/getgrav/grav-theme-antimatter/issues
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    favicon:
+        type: file
+        label: THEME_TC2018.FAVICON
+        help: THEME_TC2018.FAVICON_HELP
+        destination: 'user/themes/tc2018/images'
+        multiple: false
+        accept:
+            - image/*
+    logo:
+        type: file
+        label: THEME_TC2018.LOGO
+        help: THEME_TC2018.LOGO_HELP
+        destination: 'user/themes/tc2018/images'
+        multiple: false
+        accept:
+            - image/*
+    left_footer:
+        type: editor
+        label: THEME_TC2018.LEFT_FOOTER
+        help: THEME_TC2018.LEFT_FOOTER_HELP
+    blog_thumbnail_width:
+        type: number
+        label: THEME_TC2018.BLOG_THUMBNAIL_WIDTH
+        help: THEME_TC2018.BLOG_THUMBNAIL_WIDTH_HELP
+        description: THEME_TC2018.BLOG_THUMBNAIL_WIDTH_HELP
+        default: 600
+        validate:
+            min: 300
+    blog_thumbnail_height:
+        type: number
+        label: THEME_TC2018.BLOG_THUMBNAIL_HEIGHT
+        help: THEME_TC2018.BLOG_THUMBNAIL_HEIGHT_HELP
+        description: THEME_TC2018.BLOG_THUMBNAIL_HEIGHT_HELP
+        default: 450
+        validate:
+            min: 300
+    default_background_image:
+        type: file
+        label: THEME_TC2018.DEFAULT_BACKGROUND_IMAGE
+        help: THEME_TC2018.DEFAULT_BACKGROUND_IMAGE
+        destination: 'user/themes/tc2018/images'
+        multiple: false
+        accept:
+            - image/*
