@@ -64,8 +64,7 @@ blockquote {
   margin: 0 auto; }
 
 .main {
-  margin-top: 20em;
-  margin-top: 25vw;
+  padding-top: 20%;
   background: #FFFFFF;
   margin-bottom: 8em;
   padding-bottom: 8em;
@@ -73,6 +72,15 @@ blockquote {
   clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
   background: #FFFFFF;
   overflow: hidden; }
+
+.button {
+  padding: 0.5em 1em; }
+  .button span {
+    font-size: 80%; }
+  .button.l span {
+    padding-right: 1em; }
+  .button.r span {
+    padding-left: 1em; }
 
 @media (min-width: 600px) {
   body {
@@ -123,19 +131,40 @@ blockquote {
   content: "\f110"; }
 
 header {
-  min-height: 8em;
-  height: 20vw;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  transition: all 0.5s ease;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
-  z-index: 1000;
-  background: #FFE455;
-  background-size: cover;
-  overflow: hidden; }
+  position: relative; }
+  header .scroll {
+    min-height: 8em;
+    height: 20vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+    z-index: 1005;
+    background: #FFE455;
+    background-size: cover;
+    overflow: hidden; }
+  header .fixed {
+    height: 8em;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+    z-index: 1000;
+    background: #FFE455;
+    background-size: cover;
+    overflow: hidden;
+    background: #FFE455; }
+    header .fixed .logo-svg {
+      min-width: 6em;
+      width: 10vw; }
+      header .fixed .logo-svg svg {
+        max-height: 6em; }
+    header .fixed .menu {
+      width: 20em; }
   header > div {
     transition: all 0.5s ease;
     padding: 0.5em 2em 1em;
@@ -175,26 +204,11 @@ header {
     overflow: hidden;
     margin: 0;
     padding: .5rem 0 1.5rem 3.5rem; }
-  header.fixed {
-    min-height: 6em;
-    height: 10vw; }
-    header.fixed > div {
-      background: #FFE455; }
-    header.fixed .logo-svg {
-      min-width: 6em;
-      width: 10vw; }
-      header.fixed .logo-svg svg {
-        max-height: 4em; }
-    header.fixed .menu {
-      width: 20em; }
 
 amp-sidebar {
   background: #FFE455;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 28% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 28% 100%); }
-
-.i-amphtml-sidebar-mask {
-  opacity: 0.7; }
 
 .menu a {
   display: block;
@@ -240,6 +254,62 @@ footer {
     padding: 2em;
     font-family: "Ubuntu Condensed", sans-serif; }
 
+.work-item {
+  position: relative;
+  float: left;
+  background: #000000;
+  padding-bottom: 50%;
+  height: 0;
+  width: 50%;
+  max-width: 30em;
+  margin: auto;
+  transition: all 0.2s ease;
+  overflow: hidden; }
+  .work-item amp-img {
+    transition: all 0.4s ease; }
+  .work-item .caja-texto {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-right: 1em;
+    margin-top: 1em; }
+    .work-item .caja-texto h2 {
+      color: #000000;
+      background: #FFE455;
+      font-size: 1.8em;
+      padding: .2rem .7rem;
+      margin-bottom: .1em;
+      display: inline-block; }
+    .work-item .caja-texto .resumen {
+      height: 0;
+      transition: all 0.4s ease;
+      overflow: hidden;
+      padding-left: 1.2em;
+      color: #FFFFFF; }
+    .work-item .caja-texto a {
+      background: #FFE455;
+      color: #000000;
+      display: inline-block;
+      padding: 0.2em 0.6em; }
+      .work-item .caja-texto a span {
+        font-size: 80%;
+        margin-left: 1em; }
+  .work-item:hover amp-img {
+    opacity: 0.2; }
+  .work-item:hover .caja-texto .resumen {
+    height: auto; }
+  .work-item:hover {
+    transform: scale(1.05);
+    z-index: 99; }
+
+@media screen and (min-width: 600px) {
+  .work-item {
+    width: 33.3333%;
+    padding-bottom: 33.3333%;
+    height: 0; }
+    .work-item .caja-texto h2 {
+      font-size: 2.4em; } }
 a.post-item {
   position: relative;
   display: block;
@@ -280,10 +350,6 @@ a.post-item {
     font-size: 2.4em; } }
 .post {
   transition: all 0.4s ease; }
-  .post nav span {
-    display: inline-block;
-    font-size: 75%;
-    vertical-align: middle; }
   .post h1 {
     margin-bottom: 0.6em; }
   .post p {

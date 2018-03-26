@@ -1,17 +1,46 @@
 header {
-  min-height: 8em;
-  height: 20vw;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  transition: all 0.5s ease;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
-  z-index: 1000;
-  background: $cColor;
-  background-size: cover;
-  overflow: hidden;
+  position: relative;
+  .scroll {
+    min-height: 8em;
+    height: 20vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+    z-index: 1005;
+    background: $cColor;
+    background-size: cover;
+    overflow: hidden;
+  }
+  .fixed {
+    // min-height: 6em;
+    height: 8em;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
+    z-index: 1000;
+    background: $cColor;
+    background-size: cover;
+    overflow: hidden;
+    background: $cColor;
+
+    .logo-svg {
+      // width: 5em;
+      min-width: 6em;
+      width: 10vw;
+      svg {
+        max-height: 6em;
+      }
+    }
+    .menu {
+      width: 20em;
+    }
+  }
 
   & > div {
     transition: all 0.5s ease;
@@ -58,35 +87,12 @@ header {
     margin: 0;
     padding: .5rem 0 1.5rem 3.5rem;
   }
-
-  &.fixed {
-    min-height: 6em;
-    height: 10vw;
-
-    & > div {
-      background: $cColor;
-    }
-    .logo-svg {
-      // width: 5em;
-      min-width: 6em;
-      width: 10vw;
-      svg {
-        max-height: 4em;
-      }
-    }
-    .menu {
-      width: 20em;
-    }
-  }
 }
 
 amp-sidebar {
   background: $cColor;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 28% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 28% 100%);
-}
-.i-amphtml-sidebar-mask {
-    opacity: 0.7;
 }
 .menu {
   a {

@@ -6,6 +6,7 @@
 {% else %}
   {% set logo = page.header.logoColor %}
 {% endif %}
+{% set blog_image = page.media.images|first %}
 {% if theme_config.favicon|length > 0 %}
     {% for item in theme_config.favicon %}
         {% set favicon = item.name %}
@@ -25,21 +26,23 @@
   }
   {% include 'main.css' %}
 
-  {% if page_type == 'post' %}
-    header {
-      background: {{page.header.color}} url({{ page.url }}/{{page.header.coverImage}}) no-repeat center center;
+  {% if page_type == 'type_post' %}
+    {% set custom = true %}
+  {% elseif page_type == 'type_work' %}
+    {% set custom = true %}
+  {% endif %}  
+  {% if custom %}
+    header .header.scroll {
+      background: {{page.header.color}} url({{blog_image.url}}) no-repeat center center;
       background-size: cover;
     }
-    header > div {
-      background: transparent;
-    }
-    header.fixed > div {
+    header .header.fixed {
       background: {{page.header.color}};
     }
-    header .logo-svg svg{
+    header .header .logo-svg svg{
       fill: {{logo}};
     }
-    header .tc-menu {
+    header .header .tc-menu {
       color: {{logo}};
     }
     a {

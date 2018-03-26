@@ -65,8 +65,9 @@ blockquote {
   margin: 0 auto;
 }
 .main {
-  margin-top: 20em;
-  margin-top: 25vw;
+  // margin-top: 20em;
+  // margin-top: 25vw;
+  padding-top: 20%;
   background: $cBlanco;
   margin-bottom: 8em;
   padding-bottom: 8em;
@@ -74,6 +75,23 @@ blockquote {
   clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
   background: $cBlanco;
   overflow: hidden;
+}
+.button {
+  padding: 0.5em 1em;
+  span {
+    font-size: 80%;
+  }
+  &.l {
+    span {
+      padding-right: 1em;
+    }
+  }
+  &.r {
+    span {
+      padding-left: 1em;
+    }
+  }
+  
 }
 @media (min-width: 600px) {
   body {

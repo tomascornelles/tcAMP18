@@ -1,0 +1,12 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+<div class="main">
+  <section class="container-c works">
+    {{ page.content }}
+    {% set collection = page.collection() %}
+    {% for child in collection %}
+      {% include 'partials/work_item.html.twig' with {'page':child, 'truncate':true} %}
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

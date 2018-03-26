@@ -1,10 +1,11 @@
+{% set blog_image = page.media.images|first.cropZoom(800,400) %}
 <a href="{{ page.url }}" class="post post-item">
 
-    <amp-img src="{{ page.url }}/{{page.header.coverImage}}" alt="{{ page.title }}" layout="responsive" width="16" height="9"></amp-img>
+    <amp-img src="{{ blog_image.url }}" alt="{{ page.title }}" layout="responsive" width="800" height="400"></amp-img>
     <div class="caja-texto">
         <h2>{{ page.title }}</h2><br>
         <time datetime="{{ page.date|date("c") }}">
-            <span>{{ page.date|date("d") }} <strong>//</strong> {{ page.date|date("m") }} <strong>//</strong> {{ page.date|date("Y") }}</span>
+            <span>{{ page.date|date("d") }} <strong>/</strong> {{ page.date|date("m") }} <strong>/</strong> {{ page.date|date("Y") }}</span>
         </time>
     </div>
 

@@ -21,18 +21,6 @@ form:
           fields:
 
             #
-            # Cover image
-            #
-            header.coverImage:
-                type: pagemediaselect
-                folder: '@self'
-                label: Cover image
-                preview_images: true
-                accept:
-                  - .png
-                  - .jpg
-
-            #
             # Custom page color
             #
             header.color:
@@ -47,16 +35,7 @@ form:
             header.logoColor:
               type: toggle
               label: Logo color
-              default: 'black'
+              default: '#000000'
               options:
-                '#222222': Black
+                '#000000': Black
                 '#ffffff': White
-                'custom': Custom
-
-            #
-            # Custom logo color
-            #
-            header.customLogoColor:
-              type: colorpicker
-              label: Custom logo color
-              default: "#FFE455"

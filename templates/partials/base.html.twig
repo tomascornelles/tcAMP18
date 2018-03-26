@@ -12,7 +12,7 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
-    <link rel="canonical" href="{{page_url}}" />
+    <link rel="canonical" href="{{page.url}}" />
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -32,23 +32,33 @@
   <body>
 
     <header>
-      <div>
+      <div class="header scroll">
         <div class="logo-svg">
           <a href="{{ home_url }}">
             {% include 'partials/logo.html.twig' %}
           </a>
         </div>
-        <div class="menu-toggle js-menu-toggle" on="tap:sidebar.open">
+        <a class="menu-toggle js-menu-toggle" on="tap:sidebar.open">
           <span class="tc-menu"></span>
+        </a>
+      </div>
+      <div class="header fixed">
+        <div class="logo-svg">
+          <a href="{{ home_url }}">
+            {% include 'partials/logo.html.twig' %}
+          </a>
         </div>
+        <a class="menu-toggle js-menu-toggle" on="tap:sidebar.open">
+          <span class="tc-menu"></span>
+        </a>
       </div>
     </header>
 
     <amp-sidebar id="sidebar" layout="nodisplay" side="right">
       <nav class="menu">
-        <div class="menu-toggle js-menu-toggle" on="tap:sidebar.close">
+        <a class="menu-toggle js-menu-toggle" on="tap:sidebar.close">
           <span class="tc-menu"></span>
-        </div>
+        </a>
         <a href="{{ home_url }}">PORFOLIO</a>
         <a href="{{ base_url }}/blog">BLOG</a>
         <a href="{{ base_url }}/contacto">CONTACTO</a>
