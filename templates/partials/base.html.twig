@@ -8,7 +8,6 @@
     {% if favicon %}
     <link rel="icon" type="image/png" href="{{ url('theme://images/' ~ favicon) }}" />
     {% endif %}
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu:400,500" rel="stylesheet"> 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
@@ -35,6 +34,7 @@
       <div class="header scroll">
         <div class="logo-svg">
           <a href="{{ home_url }}">
+          <amp-img src="{{ theme_url }}/images/logo-{{logo}}.svg" layout="responsive" alt="" width="1360" height="442"></amp-img>
             {% include 'partials/logo.html.twig' %}
           </a>
         </div>

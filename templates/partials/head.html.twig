@@ -1,10 +1,10 @@
 {% spaceless %}
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 {% set pageColor = page.header.color %}
-{% if page.header.logoColor == 'custom' %}
-  {% set logo = page.header.customLogoColor %}
-{% else %}
+{% if page.header.logoColor %}
   {% set logo = page.header.logoColor %}
+{% else %}
+  {% set logo = 'black' %}
 {% endif %}
 {% set blog_image = page.media.images|first %}
 {% if theme_config.favicon|length > 0 %}
@@ -14,16 +14,8 @@
 {% endif %}
 {% endspaceless %}
 <style amp-custom> 
-  @font-face {
-    font-family: 'tc2018';
-    src:  url('{{theme_url}}/fonts/tc2018.eot?plb917');
-    src:  url('{{theme_url}}/fonts/tc2018.eot?plb917#iefix') format('embedded-opentype'),
-      url('{{theme_url}}/fonts/tc2018.ttf?plb917') format('truetype'),
-      url('{{theme_url}}/fonts/tc2018.woff?plb917') format('woff'),
-      url('{{theme_url}}/fonts/tc2018.svg?plb917#tc2018') format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
+  @font-face { font-family: 'tc2018'; src:  url('{{theme_url}}/fonts/tc2018.eot?plb917'); src:  url('{{theme_url}}/fonts/tc2018.eot?plb917#iefix') format('embedded-opentype'), url('{{theme_url}}/fonts/tc2018.ttf?plb917') format('truetype'), url('{{theme_url}}/fonts/tc2018.woff?plb917') format('woff'), url('{{theme_url}}/fonts/tc2018.svg?plb917#tc2018') format('svg'); font-weight: normal; font-style: normal; }
+
   {% include 'main.css' %}
 
   {% if page_type == 'type_post' %}
@@ -32,41 +24,6 @@
     {% set custom = true %}
   {% endif %}  
   {% if custom %}
-    header .header.scroll {
-      background: {{page.header.color}} url({{blog_image.url}}) no-repeat center center;
-      background-size: cover;
-    }
-    header .header.fixed {
-      background: {{page.header.color}};
-    }
-    header .header .logo-svg svg{
-      fill: {{logo}};
-    }
-    header .header .tc-menu {
-      color: {{logo}};
-    }
-    a {
-      color: {{pageColor}};
-      background-color: transparent;
-      transition: all 0.5s ease;
-    }
-    a:hover {
-      background-color: {{pageColor}};
-      color: #ffffff;
-    }
-    h1 {
-      color: {{pageColor}};
-      text-align: center;
-    }
-    h2, h3, h4, h5, h6 {
-      color: {{pageColor}};
-    }
-    .post .data {
-      border-top-color: {{pageColor}};
-    }
-    footer {
-      background: {{pageColor}};
-      color: {{logo}};
-    }
+    header .header.scroll { background: {{page.header.color}} url({{blog_image.url}}) no-repeat center center; background-size: cover; } header .header.fixed { background: {{page.header.color}}; } header .header .logo-svg svg{ fill: {{logo}}; } header .header .tc-menu { color: {{logo}}; } a { color: {{pageColor}}; background-color: transparent; transition: all 0.5s ease; } a:hover { background-color: {{pageColor}}; color: #ffffff; } h1 { color: {{pageColor}}; text-align: center; } h2, h3, h4, h5, h6 { color: {{pageColor}}; } .post .data { border-top-color: {{pageColor}}; } footer { background: {{pageColor}}; color: {{logo}}; } 
   {% endif %}
 </style>

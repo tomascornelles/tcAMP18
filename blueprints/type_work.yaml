@@ -35,7 +35,7 @@ form:
             header.logoColor:
               type: toggle
               label: Logo color
-              default: '#000000'
+              default: 'black'
               options:
-                '#000000': Black
-                '#ffffff': White
+                'black': Black
+                'white': White

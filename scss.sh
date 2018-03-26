@@ -1,2 +1,2 @@
 #!/bin/sh
-scss --watch scss:templates :compressed
+scss --watch scss:templates --style compressed
