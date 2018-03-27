@@ -72,16 +72,21 @@ amp-sidebar {
     color: $cNegro;
     padding: 0.02em;
     line-height: 1;
-    margin: 0.8em;
-    margin-left: 2em;
+    margin: 0.8em 0 0.8em 2em;
     font-size: 2em;
     height: auto;
     text-align: right;
     font-family: $font2;
+    padding-right: 1.5em;
 
     &:hover {
       background: initial;
       color: initial;
+    }
+    
+    &.active {
+      border-right: 1em solid $cNegro;
+      padding-right: 0.5em;
     }
   }
 

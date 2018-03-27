@@ -50,9 +50,10 @@
         <a class="menu-toggle js-menu-toggle" on="tap:sidebar.close">
           <span class="tc-menu"></span>
         </a>
-        <a href="{{ home_url }}">PORFOLIO</a>
-        <a href="{{ base_url }}/blog">BLOG</a>
-        <a href="{{ base_url }}/contacto">CONTACTO</a>
+        {{page.parent.slug}}
+        <a href="{{ home_url }}" {% if page.slug == "home" or page.parent.slug == "home" %} class="active" {% endif %}>PORFOLIO</a>
+        <a href="{{ base_url }}/blog" {% if page.slug == "blog" or page.parent.slug == "blog" %} class="active" {% endif %}>BLOG</a>
+        <a href="{{ base_url }}/contacto" {% if page.slug == "contacto" %} class="active" {% endif %}>CONTACTO</a>
       </nav>
     </amp-sidebar>
 
