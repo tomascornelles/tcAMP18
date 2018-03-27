@@ -39,6 +39,26 @@
       padding: 0.2em;
     }
   }
+  .button {
+    border: 1px solid $cGris;
+    font-size: 0.6em;
+    float: left;
+    margin-right: 0.5em;
+    span {
+      padding: 0;
+    }
+  }
+  .breadcrum {
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 2em;
+    color: $cGris;
+    a {
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 0.2em 0.4em;
+    }
+  }
   .social {
     text-align: center;
     h4 {

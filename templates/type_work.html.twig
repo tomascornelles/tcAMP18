@@ -2,22 +2,15 @@
 {% block content %}
 <div class="main">
   <section class="post container-c">
-    <nav><p>
-      <a href="{{home_url}}" class="button l"><span class="tc-left"></span> Volver al porfolio</a>
-    </p></nav>
-    <h1>
-      {{ page.title }}
-    </h1>
 
-    {% if page.taxonomy.category %}
-    <div class="categories">
-        {% for category in page.taxonomy.category %}
-        <a href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}" class="p-category">{{ category }}</a>
-        {% endfor %}
-    </div>
-    {% endif %}
+    <nav class="breadcrum">
+      <a href="{{page.parent.url}}">Volver al {{page.parent.title}} </a>
+    </nav>
 
-    <div class="data"><span>{{ page.date|nicetime(true) }}</span></div>
+    <h1>{{ page.title }}</h1>
+
+    <div class="data"></div>
+    
     <article>
       {{ page.content }}
     </article>

@@ -1,4 +1,8 @@
-
+.works {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 .work-item {
   position: relative;
   float: left;
@@ -82,5 +86,12 @@
         height: auto;
       }
     }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .works {
+    margin: 0 auto;
+    width: 1200px;
   }
 }
