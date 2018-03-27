@@ -7,6 +7,8 @@ footer {
   right: 0;
   z-index: -1;
   padding-top: 3em;
+  -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
   p {
     text-align: center;
     padding: 2em;

@@ -1,53 +1,37 @@
 header {
   position: relative;
+  .fondo-fijo{
+    z-index: 100;
+    position: fixed;
+    height: 8em;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $cColor;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
+  }
+  .contenido-fijo {
+    z-index: 300;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
   .scroll {
-    min-height: 8em;
     height: 20vw;
+    min-height: 10em;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
-    z-index: 1005;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+    z-index: 200;
     background: $cColor;
     background-size: cover;
     overflow: hidden;
-  }
-  .fixed {
-    // min-height: 6em;
-    height: 8em;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 100%);
-    z-index: 1000;
-    background: $cColor;
-    background-size: cover;
-    overflow: hidden;
-    background: $cColor;
-
-    .logo-svg {
-      // width: 5em;
-      min-width: 6em;
-      width: 10vw;
-      svg {
-        max-height: 6em;
-      }
-    }
-    .menu {
-      width: 20em;
-    }
-  }
-
-  & > div {
-    transition: all 0.5s ease;
-    padding: 0.5em 2em 1em;
-    height: 100%;
-    box-sizing: border-box;
-    background: transparent;
   }
   a {
     height: 100%;
@@ -59,21 +43,9 @@ header {
     background: none;
   }
   .logo-svg {
-    width: 20%;
-    max-width: 20em;
-    min-width: 8em;
-    height: 0;
-    margin-top: 0.4rem;
-    padding-top: 57.31%;
-    position: relative;
-    transition: all 0.5s ease;
     svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      fill: $cNegro;
-      max-height: 20%;
-      transition: all 0.5s ease;
+      height: 5em;
+      margin: 1em 2em;
     }
   }
   .menu-toggle {

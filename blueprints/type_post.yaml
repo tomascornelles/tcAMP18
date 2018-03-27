@@ -19,19 +19,6 @@ form:
           # inside the Admin Panel.
           #
           fields:
-
-            #
-            # Cover image
-            #
-            header.coverImage:
-                type: pagemediaselect
-                folder: '@self'
-                label: Cover image
-                preview_images: true
-                accept:
-                  - .png
-                  - .jpg
-
             #
             # Custom page color
             #

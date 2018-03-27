@@ -67,12 +67,10 @@ blockquote {
 .main {
   // margin-top: 20em;
   // margin-top: 25vw;
-  padding-top: 20%;
+  padding-top: 13em;
   background: $cBlanco;
-  margin-bottom: 8em;
-  padding-bottom: 8em;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+  margin-bottom: 20em;
+  padding-bottom: 5em;
   background: $cBlanco;
   overflow: hidden;
 }
@@ -96,5 +94,8 @@ blockquote {
 @media (min-width: 600px) {
   body {
     font-size: 10px;
+  }
+  .main {
+    padding-top: 22vw;
   }
 }

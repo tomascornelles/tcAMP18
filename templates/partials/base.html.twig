@@ -31,18 +31,8 @@
   <body>
 
     <header>
-      <div class="header scroll">
-        <div class="logo-svg">
-          <a href="{{ home_url }}">
-          <amp-img src="{{ theme_url }}/images/logo-{{logo}}.svg" layout="responsive" alt="" width="1360" height="442"></amp-img>
-            {% include 'partials/logo.html.twig' %}
-          </a>
-        </div>
-        <a class="menu-toggle js-menu-toggle" on="tap:sidebar.open">
-          <span class="tc-menu"></span>
-        </a>
-      </div>
-      <div class="header fixed">
+      <div class="fondo-fijo"></div>
+      <div class="contenido-fijo">
         <div class="logo-svg">
           <a href="{{ home_url }}">
             {% include 'partials/logo.html.twig' %}
@@ -52,6 +42,7 @@
           <span class="tc-menu"></span>
         </a>
       </div>
+      <div class="scroll"></div>
     </header>
 
     <amp-sidebar id="sidebar" layout="nodisplay" side="right">
