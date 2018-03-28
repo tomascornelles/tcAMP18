@@ -19,11 +19,17 @@
   {% include 'main.css' %}
 
   {% if page_type == 'type_post' %}
-    {% set custom = true %}
+    {% set custom_post = true %}
   {% elseif page_type == 'type_work' %}
-    {% set custom = true %}
-  {% endif %}  
-  {% if custom %}
+    {% set custom_post = true %}
+  {% elseif page_type == 'page_home' %}
+    {% set custom_home = true %}
+  {% endif %}
+
+  {% if custom_post %}
     header .scroll { background: {{page.header.color}} url({{blog_image.url}}) no-repeat center center; background-size: cover; } header .fondo-fijo { background: {{page.header.color}}; } header .logo-svg svg{ fill: {{logo}}; } header .tc-menu { color: {{logo}}; } a { color: {{pageColor}}; background-color: transparent; transition: all 0.5s ease; } a:hover { background-color: {{pageColor}}; color: #ffffff; } h1 { color: {{pageColor}}; text-align: center; } h2, h3, h4, h5, h6 { color: {{pageColor}}; } .post .data { border-top-color: {{pageColor}}; } footer { background: {{pageColor}}; color: {{logo}}; } .post .button {border-color: {{page.header.color}}}
+  {% elseif custom_home %}
+    {% set home_image = page.media.images|first.grayscale().contrast(20).brightness(-100).colorize(255,228,85) %}
+    header .scroll { background: url({{home_image.url}}) no-repeat center center; background-size: cover; } 
   {% endif %}
 </style>

@@ -59,11 +59,13 @@ blockquote {
   max-width: 1200px;
   padding: 0 2em;
   margin: 0 auto;
+  clear: both;
 }
 .container-c {
   max-width: 800px;
   padding: 0 2em;
   margin: 0 auto;
+  clear: both;
 }
 .main {
   // margin-top: 20em;
@@ -71,7 +73,6 @@ blockquote {
   padding-top: 13em;
   background: $cBlanco;
   margin-bottom: 20em;
-  padding-bottom: 5em;
   background: $cBlanco;
   overflow: hidden;
 }

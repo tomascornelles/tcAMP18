@@ -1,0 +1,55 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+<div class="main">
+  <section class="container-i presentation">
+    {{ page.content }}    
+  </section>
+
+  <section class="works">
+    <div class="container-i">
+      <h2>Mis últimos proyectos</h2>
+        {% for page in page.find('/porfolio').children.order('date', 'desc').slice(0, 12) %}
+          {% include 'partials/work_item.html.twig' with {'page':page, 'truncate':true} %}
+        {% endfor %}
+    </div>
+  </section>
+
+  <section class="container-i logos">
+    <h2>Algunas empresas para las que he trabajado</h2>
+    {% for logo in page.header.logos %}
+      <div class="logo">
+        {% set logo_image = logo.image|first %}
+        {% if logo.url %}
+          <a href="{{logo.url}}"><img src="{{page.url}}/{{logo_image.path}}" alt="{{logo.text}}"></a>
+        {% else %}
+          <img src="{{page.url}}/{{logo_image.path}}" alt="{{logo.text}}">
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  
+  <section class="recent-posts">
+    <div class="container-i">
+      <h2>Última entrada en el blog</h2>
+        {% for p in page.find('/blog').children.order('date', 'desc').slice(0, 1) %}
+            {% set blog_image = p.media.images|first.cropZoom(1200,600) %}
+            <a href="{{ p.url }}" class="post post-item">
+                <amp-img src="{{ blog_image.url }}" alt="{{ p.title }}" layout="responsive" width="1200" height="600"></amp-img>
+                <div class="caja-texto">
+                    <h2>{{ p.title }}</h2><br>
+                    <time datetime="{{ p.date|date("c") }}">
+                        <span>{{ p.date|date("d") }} <strong>/</strong> {{ p.date|date("m") }} <strong>/</strong> {{ p.date|date("Y") }}</span>
+                    </time>
+                    <div class="summary">
+                      {{p.summary(400)}}
+                      <p><span class="button">Seguir Leyendo</span></p>
+                    </div>
+                </div>
+            </a>
+  
+        {% endfor %}
+    </div>
+  </section>
+
+</div>
+{% endblock %}

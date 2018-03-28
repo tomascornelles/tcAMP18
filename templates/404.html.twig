@@ -1,0 +1,50 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+<div class="main">
+  <section class="container-c">
+    {{ page.content }}
+      <div class="r-1">
+      <div class="c-1 cell"></div>
+      <div class="c-2 cell"></div>
+      <div class="c-3 cell"></div>
+    </div>
+    <div class="r-2">
+      <div class="c-1 cell"></div>
+      <div class="c-2 cell"></div>
+      <div class="c-3 cell"></div>
+    </div>
+    <div class="r-3">
+      <div class="c-1 cell"></div>
+      <div class="c-2 cell"></div>
+      <div class="c-3 cell"></div>
+    </div>
+  </section>
+</div>
+<script>
+var contador = 0
+function buscaCelda() {
+  var x = Math.ceil(Math.random()*3)
+  var y = Math.ceil(Math.random()*3)
+  
+  if ($('.r-'+y+' .c-'+x).hasClass('tipo4') || $('.r-'+y+' .c-'+x).hasClass('tipo0')) {
+    buscaCelda()
+  }
+  else {
+    $('.r-'+y+' .c-'+x).delay(500).addClass('tipo0')
+    contador++
+  }
+}
+
+$(function() {
+  $('.cell').on('click', function() {
+    if ($(this).hasClass('tipo4') || $(this).hasClass('tipo0')) {
+      console.log('Escoge otro')
+    }
+    else {
+      $(this).addClass('tipo4')
+      contador++
+      if (contador < 9) buscaCelda()
+    }
+  })
+})</script>
+{% endblock %}

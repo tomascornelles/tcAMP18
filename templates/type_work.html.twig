@@ -1,7 +1,7 @@
 {% extends 'partials/base.html.twig' %}
 {% block content %}
 <div class="main">
-  <section class="post container-c">
+  <section class="work container-c">
 
     <nav class="breadcrum">
       <a href="{{page.parent.url}}">Volver al {{page.parent.title}} </a>
@@ -9,8 +9,23 @@
 
     <h1>{{ page.title }}</h1>
 
-    <div class="data"></div>
+    {% if (page.header.client or page.header.year or page.header.type or page.header.technology) %}
+    <ul class="data">
+      {% if page.header.client %}<li>Cliente: {{page.header.client}}</li>{% endif %}
+      {% if page.header.year %}<li>Año: {{page.header.year}}</li>{% endif %}
+      {% if page.header.type %}<li>Tipo: {% for type in page.header.type %} {{type}} {% endfor %}</li>{% endif %}
+      {% if page.header.technology %}<li>Tipo: {% for technology in page.header.technology %} {{technology}} {% endfor %}</li>{% endif %}
+    </ul>
+    {% endif %}
     
+    {% if page.taxonomy.tipo %}
+    <span class="tipos">
+        {% for tipo in page.taxonomy.tipo %}
+        <a href="{{ home_url|rtrim('/') }}/porfolio/tipo{{ config.system.param_sep }}{{ tipo }}" class="p-category">{{ tipo }}</a>
+        {% endfor %}
+    </span>
+    {% endif %}
+
     <article>
       {{ page.content }}
     </article>

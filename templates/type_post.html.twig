@@ -14,7 +14,7 @@
     {% if page.taxonomy.category %}
     <div class="categories">
         {% for category in page.taxonomy.category %}
-        <a href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}" class="p-category">{{ category }}</a>
+        <a href="{{ page.parent.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}" class="p-category">{{ category }}</a>
         {% endfor %}
     </div>
     {% endif %}

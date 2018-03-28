@@ -102,14 +102,14 @@ amp-sidebar {
   }
 
   &.open {
-    width: 20em;
+    width: 50vw;
   }
 }
 
 @media (min-width: 600px) {
   .menu {
     &.open{
-      width: 25vw;
+      width: 30%;
     }
 
     a {

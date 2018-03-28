@@ -5,6 +5,7 @@ title: Post Content
 
 form:
   fields:
+  
     tabs:
       type: tabs
       active: 1
@@ -12,26 +13,12 @@ form:
       fields:
         content:
           type: tab
-
-          #
-          # Add your custom fields here.
-          # These fields will be available in the page's Content tab
-          # inside the Admin Panel.
-          #
+          
           fields:
-
-            #
-            # Custom page color
-            #
             header.color:
               type: colorpicker
               label: Page highlight color
               default: '#FFE455'
-
-            #
-            # Logo color
-            #
-
             header.logoColor:
               type: toggle
               label: Logo color
@@ -39,3 +26,26 @@ form:
               options:
                 'black': Black
                 'white': White
+            header.client:
+              type: text
+              label: Client
+              validate:
+                type: text
+            header.date:
+              type: text
+              label: Year
+            header.type:
+              type: selectize
+              label: Type
+              classes: fancy
+              multiple: true
+              validate:
+                  type: commalist
+            header.technology:
+              type: selectize
+              label: Technologies
+              classes: fancy
+              multiple: true
+              validate:
+                  type: commalist
+                  
