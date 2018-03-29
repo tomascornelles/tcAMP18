@@ -1,10 +1,19 @@
 {% extends 'partials/base.html.twig' %}
 {% block content %}
+{% set client = grav.uri.params("client", true) %}
+{% set year = grav.uri.params("year", true) %}
+{% set type = grav.uri.params("type", true) %}
+{% set tech = grav.uri.params("tech", true) %}
 <div class="main">
   <section class="container-i">
     <h1>
       {{ page.title }}
+      {% if client %} sobre {{client}} {% endif %}
+      {% if year %} del año {{year}} {% endif %}
+      {% if type %} de {{type}} {% endif %}
+      {% if tech %} donde se usa {{tech}} {% endif %}
     </h1>
+    
     {{ page.content }}
     {% set collection = page.collection() %}
     {% for child in collection %}

@@ -57,13 +57,13 @@ blockquote {
 }
 .container-i {
   max-width: 1200px;
-  padding: 0 2em;
+  padding: 0 1em;
   margin: 0 auto;
   clear: both;
 }
 .container-c {
   max-width: 800px;
-  padding: 0 2em;
+  padding: 0 1em;
   margin: 0 auto;
   clear: both;
 }
@@ -72,10 +72,11 @@ blockquote {
   // margin-top: 25vw;
   padding-top: 13em;
   background: $cBlanco;
-  margin-bottom: 20em;
+  margin-bottom: 23em;
   background: $cBlanco;
   overflow: hidden;
 }
+.hide {display: none;}
 .button {
   padding: 0.5em 1em;
   span {
@@ -91,7 +92,6 @@ blockquote {
       padding-left: 1em;
     }
   }
-  
 }
 @media (min-width: 600px) {
   body {
@@ -99,5 +99,12 @@ blockquote {
   }
   .main {
     padding-top: 22vw;
+  }
+  
+  .container-i {
+    padding: 0 2em;
+  }
+  .container-c {
+    padding: 0 2em;
   }
 }

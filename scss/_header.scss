@@ -10,7 +10,6 @@ header {
     background: $cColor;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
-    box-shadow: 0 2px 5px rgba(0,0,0,.5);
   }
   .contenido-fijo {
     z-index: 300;
@@ -46,7 +45,7 @@ header {
     svg {
       height: 5em;
       width: 9em;
-      margin: 1em 2em;
+      margin: 1em 1em;
     }
   }
   .menu-toggle {
@@ -64,8 +63,10 @@ header {
 
 amp-sidebar {
   background: $cColor;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 28% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 28% 100%);
+  -webkit-clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+  width: 70%;
+  max-width: 600px;
 }
 .menu {
   a {
@@ -114,6 +115,13 @@ amp-sidebar {
 
     a {
       font-size: 3em;
+    }
+  }
+  header {
+    .logo-svg {
+      svg {
+        margin: 1em 2em;
+      }
     }
   }
 }

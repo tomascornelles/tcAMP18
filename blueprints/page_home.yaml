@@ -27,14 +27,12 @@ form:
               fields:
                 .text:
                   type: text
-                  label: Text
+                  label: Client
                 .url:
                   type: text
                   label: URL
                 .image:
-                  type: file
+                  type: filepicker
                   label: Client logo image
-                  destination: '@self'
-                  multiple: false
-                  accept:
-                    - image/*
+                  folder: '@self'
+                  preview_images: true

@@ -14,18 +14,23 @@
     </div>
   </section>
 
-  <section class="container-i logos">
+  <section class="container-i">
     <h2>Algunas empresas para las que he trabajado</h2>
-    {% for logo in page.header.logos %}
-      <div class="logo">
-        {% set logo_image = logo.image|first %}
-        {% if logo.url %}
-          <a href="{{logo.url}}"><img src="{{page.url}}/{{logo_image.path}}" alt="{{logo.text}}"></a>
-        {% else %}
-          <img src="{{page.url}}/{{logo_image.path}}" alt="{{logo.text}}">
-        {% endif %}
-      </div>
-    {% endfor %}
+    <div class="logos">
+      {% for logo in page.header.logos %}
+        <div class="logo">
+          {% set image_parts = pathinfo(logo.image) %}
+          {% set image_basename = image_parts.basename %}
+          {% set image_page = image_parts.dirname == '.' ? page : page.find(image_parts.dirname) %}
+  
+          {% if logo.url %}
+            <a href="{{logo.url}}"><amp-img src="{{ image_page.media[image_basename].url }}" width="300" height="300" layout="responsive" alt="{{logo.name}}"></a>
+          {% else %}
+            <amp-img src="{{ image_page.media[image_basename].url }}" width="300" height="300" layout="responsive" alt="{{logo.name}}">
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
   </section>
   
   <section class="recent-posts">
