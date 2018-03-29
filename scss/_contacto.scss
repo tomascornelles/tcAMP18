@@ -29,14 +29,7 @@
     margin-bottom: 1em;
   }
   button[type=submit] {
-    background: rgba(255,227,85,1);
-    background: -moz-linear-gradient(-95deg, rgba(255,227,85,1) 0%, rgba(255,227,85,1) 70%, rgba(255,227,85,0) 70%, rgba(255,227,85,0) 100%);
-    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,227,85,1)), color-stop(70%, rgba(255,227,85,1)), color-stop(70%, rgba(255,227,85,0)), color-stop(100%, rgba(255,227,85,0)));
-    background: -webkit-linear-gradient(-95deg, rgba(255,227,85,1) 0%, rgba(255,227,85,1) 70%, rgba(255,227,85,0) 70%, rgba(255,227,85,0) 100%);
-    background: -o-linear-gradient(-95deg, rgba(255,227,85,1) 0%, rgba(255,227,85,1) 70%, rgba(255,227,85,0) 70%, rgba(255,227,85,0) 100%);
-    background: -ms-linear-gradient(-95deg, rgba(255,227,85,1) 0%, rgba(255,227,85,1) 70%, rgba(255,227,85,0) 70%, rgba(255,227,85,0) 100%);
-    background: linear-gradient(175deg, rgba(255,227,85,1) 0%, rgba(255,227,85,1) 70%, rgba(255,227,85,0) 70%, rgba(255,227,85,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe355', endColorstr='#ffe355', GradientType=1 );
+    background: $cColor;
     color: $cNegro;
     border: none;
     font-size: 2em;

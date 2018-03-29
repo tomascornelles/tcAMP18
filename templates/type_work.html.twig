@@ -9,19 +9,38 @@
 
     <h1>{{ page.title }}</h1>
 
-    {% if (page.header.client or page.header.year or page.header.type or page.header.technology) %}
+    {% if (page.taxonomy.client or page.taxonomy.year or page.taxonomy.type or page.taxonomy.tech) %}
     <ul class="data">
-      {% if page.header.client %}<li>Cliente: {{page.header.client}}</li>{% endif %}
-      {% if page.header.year %}<li>Año: {{page.header.year}}</li>{% endif %}
-      {% if page.header.type %}<li>Tipo: {% for type in page.header.type %} {{type}} {% endfor %}</li>{% endif %}
-      {% if page.header.technology %}<li>Tipo: {% for technology in page.header.technology %} {{technology}} {% endfor %}</li>{% endif %}
+      {% if page.taxonomy.client %}
+        <li>Cliente: {% for client in page.taxonomy.client %} 
+          <a href="{{ home_url|rtrim('/') }}/porfolio/client{{ config.system.param_sep }}{{ client }}">{{ client }}</a> 
+        {% endfor %}</li>
+      {% endif %}
+      {% if page.taxonomy.year %}<li>Año: 
+        {% for year in page.taxonomy.year %} 
+          <a href="{{ home_url|rtrim('/') }}/porfolio/year{{ config.system.param_sep }}{{ year }}">{{ year }}</a> 
+        {% endfor %}</li>
+      {% endif %}
+      {% if page.taxonomy.type %}<li>Tipo: 
+        {% for type in page.taxonomy.type %} 
+          <a href="{{ home_url|rtrim('/') }}/porfolio/type{{ config.system.param_sep }}{{ type }}">{{ type }}</a> 
+        {% endfor %}</li>
+      {% endif %}
+      {% if page.taxonomy.tech %}<li>Tecnología: 
+        {% for tech in page.taxonomy.tech %} 
+          <a href="{{ home_url|rtrim('/') }}/porfolio/tech{{ config.system.param_sep }}{{ tech }}">{{ tech }}</a> 
+        {% endfor %}</li>
+      {% endif %}
     </ul>
     {% endif %}
     
     {% if page.taxonomy.tipo %}
     <span class="tipos">
         {% for tipo in page.taxonomy.tipo %}
-        <a href="{{ home_url|rtrim('/') }}/porfolio/tipo{{ config.system.param_sep }}{{ tipo }}" class="p-category">{{ tipo }}</a>
+        
+        
+        
+        
         {% endfor %}
     </span>
     {% endif %}

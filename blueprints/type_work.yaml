@@ -26,26 +26,3 @@ form:
               options:
                 'black': Black
                 'white': White
-            header.client:
-              type: text
-              label: Client
-              validate:
-                type: text
-            header.date:
-              type: text
-              label: Year
-            header.type:
-              type: selectize
-              label: Type
-              classes: fancy
-              multiple: true
-              validate:
-                  type: commalist
-            header.technology:
-              type: selectize
-              label: Technologies
-              classes: fancy
-              multiple: true
-              validate:
-                  type: commalist
-                  

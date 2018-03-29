@@ -1,26 +1,49 @@
-.cell {
-  display: inline-block;
-  width: 5em;
-  height: 5em;
-  border: 1px solid #999;
-  vertical-align: top;
+.page404 {
   text-align: center;
-}
-.cell.tipo4 {
-  background: #000;
-  color: #ffe455;
-}
-.cell.tipo4:after {
-  content: "4";
-  font-size: 20px;
-  line-height: 4;
-}
-.cell.tipo0 {
-  background: #ffe455;
-  color: #000
-}
-.cell.tipo0:after {
-  content: "0";
-  font-size: 20px;
-  line-height: 4;
+  h1 {
+    font-size: 4em;
+  }
+  .cell {
+    display: inline-block;
+    width: 15vh;
+    height: 15vh;
+    border: 1px solid #999;
+    vertical-align: top;
+    text-align: center;
+    margin: 2px;
+    font-size: 5vh;
+    transition: all .5s ease;
+  
+    &.tipo4 {
+      background: #000;
+      color: #ffe455;
+    }
+    &.tipo4:after {
+      content: "4";
+      line-height: 3em;
+    }
+    &.tipo0 {
+      background: #ffe455;
+      color: #000
+    }
+    &.tipo0:after {
+      content: "0";
+      line-height: 3em;
+    }
+  }
+  .reiniciar {
+    border: 1px solid $cNegro;
+    background: $cColor;
+    cursor: pointer;
+  }
+  .menu_alt {
+    display: none;
+    a {
+      color: $cNegro;
+      font-size: 3em;
+      display: inline-block;
+      padding: 0.3em .5em;
+      font-family: $font2;
+    }
+  }
 }
