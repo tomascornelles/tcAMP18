@@ -36,6 +36,9 @@ p {
 img {
   max-width: 100%;
 }
+figure {
+  margin: 0;
+}
 a {
   text-decoration: none;
 }
@@ -72,20 +75,34 @@ blockquote {
   // margin-top: 25vw;
   padding-top: 13em;
   background: $cBlanco;
-  margin-bottom: 23em;
+  margin-bottom: 13em;
   background: $cBlanco;
   overflow: hidden;
 }
 .title {
-  font-size: 10vw;
-  margin-top: -0.4em;
-  background: $cColor;
-  display: inline-block;
-  padding: 0.2em;
+  position: absolute;
+  font-size: 12vw;
+  top: 0;
+  z-index: 999;
+  text-align: center;
+  left: 1em;
+  right: 1em;
+  margin-top: 0;
+  background: none;
+  color: $cColor;
+  text-shadow: 0.05em 0.05em 0.1em rgba(0,0,0,0.2);
+  a {
+    color: $cColor;
+  }
+  strong {
+    font-family: $font1;
+  }
 }
 .hide {display: none;}
 .button {
   padding: 0.5em 1em;
+  background: $cColor;
+  color: $cNegro;
   span {
     font-size: 80%;
   }
@@ -106,17 +123,6 @@ blockquote {
   }
   .main {
     padding-top: 22vw;
-  }
-  .title {
-    position: absolute;
-    font-size: 10vw;
-    top: -0.7em;
-    z-index: 999;
-    text-align: center;
-    left: 1em;
-    right: 1em;
-    margin-top: 0.7em;
-    background: none;
   }
   .container-i {
     padding: 0 2em;

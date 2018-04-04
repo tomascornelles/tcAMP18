@@ -15,6 +15,18 @@
 .tc-logo:before {
   content: "\e900";
 }
+.tc-envelope-o:before {
+  content: "\f003";
+}
+.tc-close:before {
+  content: "\f00d";
+}
+.tc-remove:before {
+  content: "\f00d";
+}
+.tc-times:before {
+  content: "\f00d";
+}
 .tc-left:before {
   content: "\f053";
 }
@@ -44,4 +56,7 @@
 }
 .tc-spinner:before {
   content: "\f110";
+}
+.tc-bicycle:before {
+  content: "\f206";
 }

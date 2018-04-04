@@ -28,14 +28,16 @@
     <header>
       <div class="fondo-fijo"></div>
       <div class="contenido-fijo">
-        <div class="logo-svg">
-          <a href="{{ home_url }}">
-            {% include 'partials/logo.html.twig' %}
+        <div class="container-i">
+          <div class="logo-svg">
+            <a href="{{ home_url }}">
+              {% include 'partials/logo.html.twig' %}
+            </a>
+          </div>
+          <a class="menu-toggle js-menu-toggle" on="tap:sidebar.open">
+            <span class="tc-menu"></span>
           </a>
         </div>
-        <a class="menu-toggle js-menu-toggle" on="tap:sidebar.open">
-          <span class="tc-menu"></span>
-        </a>
       </div>
       <div class="scroll">
         <div class="sobre-scroll"></div>
@@ -45,7 +47,7 @@
     <amp-sidebar id="sidebar" layout="nodisplay" side="right">
       <nav class="menu">
         <a class="menu-toggle js-menu-toggle" on="tap:sidebar.close">
-          <span class="tc-menu"></span>
+          <span class="tc-close"></span>
         </a>
         <a href="{{ home_url }}" {% if page.slug == "home" or page.parent.slug == "home" %} class="active" {% endif %}>INICIO</a>
         <a href="{{ base_url }}/porfolio" {% if page.slug == "porfolio" or page.parent.slug == "porfolio" %} class="active" {% endif %}>PORFOLIO</a>
@@ -57,11 +59,11 @@
     {% block content %}{% endblock %}
 
     <footer>
-      <p>
-        <a href="https://twitter.com/tomascornelles"><span class="tc-twitter"></span></a>
-        <a href="https://www.linkedin.com/in/tomascornelles"><span class="tc-linkedin"></span></a>
-        <br>&copy; 2018 Tomás Cornelles
-      </p>
+      <div class="container-i">
+        <div class="left">&copy; 2018 Tomás Cornelles</div>
+        <div class="right"><a href="https://twitter.com/tomascornelles"><span class="tc-twitter">Twitter</span></a>
+          <a href="https://www.linkedin.com/in/tomascornelles"><span class="tc-linkedin">Linkedin</span></a></div>
+      </div>
     </footer>
     
     <amp-analytics type="googleanalytics" id="analytics1">

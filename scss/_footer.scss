@@ -9,15 +9,27 @@ footer {
   padding-top: 3em;
   -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
-  p {
-    text-align: center;
-    padding: 2em;
-    font-family: $font2;
+  padding: 2em 0;
+  font-family: $font2;
+  .left {
+    float: left;
+    font-size: 1.5em;
+    line-height: 3rem;
+  }
+  .right {
+    float: right;
+    line-height: 3rem;
   }
   a {
-    color: $cNegro;
     font-size: 2em;
     display: inline-block;
     padding: 0.3em;
+    overflow: hidden;
+    width: 1em;
+    color: transparent;
+
+    span:before {
+      color: $cNegro;
+    }
   }
 }

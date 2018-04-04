@@ -1,16 +1,25 @@
 {% extends 'partials/base.html.twig' %}
 {% block content %}
-<div class="main">
-  <section class="container-i presentation">
-    {{ page.content }}    
-  </section>
-
+<div class="main home">
+  <h1 class="title">Hello <span class="tc-logo"></span></span></h1>
   <section class="works">
     <div class="container-i">
       <h2>Mis últimos proyectos</h2>
         {% for page in page.find('/porfolio').children.order('date', 'desc').slice(0, 12) %}
           {% include 'partials/work_item.html.twig' with {'page':page, 'truncate':true} %}
         {% endfor %}
+    </div>
+    <div class="container-i">
+      <p>
+        <a href="{{home_url}}/porfolio" class="boton">Ver el porfolio completo <span class="tc-right"></span></a>
+      </p>
+    </div>
+  </section>
+
+  <section class="presentation">
+    <div class="container-i">
+      {{ page.content }}
+      <div><a href="{{home_url}}/CV_TomasCornelles.pdf" class="boton">Descarga mi CV <span class="tc-down"></span></a></div>
     </div>
   </section>
 
@@ -54,55 +63,64 @@
   
         {% endfor %}
     </div>
+    <div class="container-i">
+      <p>
+        <a href="{{home_url}}/blog" class="boton inverso">Visita mi blog <span class="tc-right"></span></a>
+      </p>
+    </div>
   </section>
  <section class="container-form">
-  <h2>Contáctame</h2>
-    <form name="contact" 
-          action-xhr="{{home_url}}mail" 
-          method="POST"  
-          target="_top"
-          id="contact" 
-          novalidate=""
-          on="submit-success:AMP.setState({response:'success'})">
-      <div class="formulario" [class]="'formulario ' + response">
-        <div class="form-field">
-          <div class="form-label">
-            <label class="inline"> Nombre </label>
-          </div>
-          <div class="form-data " data-grav-field="text" data-grav-disabled="true" data-grav-default="null">
-            <div class="form-input-wrapper  ">
-              <input name="name" value="" class="user-valid valid" placeholder="Dime tu nombre" autocomplete="on" type="text">
-            </div>
-          </div>
-        </div>
-  
-        <div class="form-field">
-          <div class="form-label"> 
-            <label class="inline"> Mensaje <span class="required">*</span> </label>
-          </div>
-          <div class="form-data " data-grav-field="textarea" data-grav-disabled="true" data-grav-default="null">
-            <div class="form-textarea-wrapper  ">
-              <textarea name="message" class=" " placeholder="Déjame un mensaje" required="required"></textarea>
-            </div>
-          </div>
-        </div>
-    
-    
-        <div class="buttons">
-          <button class="button button" type="submit"> Enviar <span class="tc-right"></span> </button>
-        </div>
-      </div>
-
-      <div class="mensaje" submit-success>
+  <h2>Déjame un mensaje</h2>
+  <p>Y si quieres que te contacte no olvides dejarme un email o Twitter. Los datos que se envían solo se usarán para gestionr la respuesta.</p>
+    {% if msg == 'ok' %}
+      <div class="mensaje">
         Muchas gracias por el mensaje, espero darte una respuesta muy pronto.
       </div>
-      <div class="mensaje"  submit-error>
-        Oops! Error.
+    {% elseif msg == 'ko' %}
+      <div class="mensaje">
+        Oops! Algo ha ocurrido, vuelve a intentarlo en breve por favor.
       </div>
-  
-      <input name="__form-name__" value="contact" type="hidden">
-      <input name="__unique_form_id__" value="MJxpCY5nKLFvuqbmAINh" type="hidden">  <input name="form-nonce" value="b083ff8d7623dbb9fd2828b09531602a" type="hidden">
-    </form>
+    {% endif %}
+      <form name="contact" 
+            action="//tomascornelles.com{{home_url}}/mail" 
+            method="GET"  
+            target="_top"
+            id="contact" 
+            novalidate=""
+            on="submit-success:AMP.setState({response:'success'})">
+        <div class="formulario" [class]="'formulario ' + response">
+          <div class="form-field">
+            <div class="form-label">
+              <label class="inline" for="name"> Nombre </label>
+            </div>
+            <div class="form-data " data-grav-field="text" data-grav-disabled="true" data-grav-default="null">
+              <div class="form-input-wrapper  ">
+                <input name="name" id="name" value="" class="user-valid valid" placeholder="Dime tu nombre" autocomplete="on" type="text">
+              </div>
+            </div>
+          </div>
+    
+          <div class="form-field">
+            <div class="form-label"> 
+              <label class="inline" for="message"> Mensaje <span class="required">*</span> </label>
+            </div>
+            <div class="form-data " data-grav-field="textarea" data-grav-disabled="true" data-grav-default="null">
+              <div class="form-textarea-wrapper  ">
+                <textarea name="message" id="message" class=" " placeholder="Déjame un mensaje" required="required"></textarea>
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="buttons">
+            <button class="boton" type="submit"> Enviar <span class="tc-right"></span> </button>
+          </div>
+        </div>
+    
+        <input name="__form-name__" value="contact" type="hidden">
+        <input name="__unique_form_id__" value="MJxpCY5nKLFvuqbmAINh" type="hidden">  <input name="form-nonce" value="b083ff8d7623dbb9fd2828b09531602a" type="hidden">
+        <input type="hidden" name="url" value="{{page.url}}">
+      </form>
  </section>
 </div>
 {% endblock %}

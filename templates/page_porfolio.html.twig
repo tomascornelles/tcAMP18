@@ -6,17 +6,21 @@
 {% set tech = grav.uri.params("tech", true) %}
 <div class="main">
   <section class="container-i">
+    {% if client or year or type or tech %}
+    <h1 class="title">
+      <a href="{{page.url}}">{{ page.title }}</a>
+    </h1>
+    <h2>
+      Trabajos
+      {% if client %} sobre {{client|regex_replace(['/%20/'], [' '])}} {% endif %}
+      {% if year %} del año {{year|regex_replace(['/%20/'], [' '])}} {% endif %}
+      {% if type %} de {{type|regex_replace(['/%20/'], [' '])}} {% endif %}
+      {% if tech %} donde se usa {{tech|regex_replace(['/%20/'], [' '])}} {% endif %}
+    </h2>
+    {% else %}
     <h1 class="title">
       {{ page.title }}
     </h1>
-    {% if client or year or type or tech %}
-    <h2>
-      Trabajos
-      {% if client %} sobre {{client}} {% endif %}
-      {% if year %} del año {{year}} {% endif %}
-      {% if type %} de {{type}} {% endif %}
-      {% if tech %} donde se usa {{tech}} {% endif %}
-    </h2>
     {% endif %}
     
     {{ page.content }}

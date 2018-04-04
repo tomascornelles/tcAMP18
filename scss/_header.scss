@@ -42,16 +42,18 @@ header {
     background: none;
   }
   .logo-svg {
+    float: left;
     svg {
       height: 5em;
       width: 9em;
-      margin: 1em 1em;
+      margin: 1em 0em;
     }
   }
   .menu-toggle {
     position: absolute;
     top: 0;
     right: 0;
+    float: right;
     color: #000;
     font-size: 3em;
     transition: all 0.4s ease;
@@ -120,7 +122,7 @@ amp-sidebar {
   header {
     .logo-svg {
       svg {
-        margin: 1em 2em;
+        margin: 1em 0;
       }
     }
   }
