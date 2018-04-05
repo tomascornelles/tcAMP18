@@ -77,13 +77,15 @@
       transition: all 0.2s ease;
       padding: 0.5em;
       color: transparent;
-      &:hover em {
-        background: inherit;
-        color: initial;
-        transform: scale(1.4) rotate(15deg);
-      }
       em {
         color: $cNegro;
+      }
+      &:hover {
+        background: inherit;
+        transform: scale(1.4) rotate(15deg);
+        em {
+          color: initial;
+        }
       }
     }
   }
