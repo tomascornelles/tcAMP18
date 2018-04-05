@@ -44,13 +44,21 @@ header {
   .logo-svg {
     float: left;
     svg {
-      height: 5em;
-      width: 9em;
+      height: 4em;
+      width: 7.2em;
       margin: 1em 0em;
+    }
+    h1 {
+      text-align: left;
+      font-size: 1.4em;
+      line-height: 1;
+      margin-left: 0;
+      padding-left: 2.85em;
+      margin-top: -0.9em;
     }
   }
   .menu-toggle {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     float: right;
@@ -60,6 +68,8 @@ header {
     overflow: hidden;
     margin: 0;
     padding: .5rem 0 1.5rem 3.5rem;
+    z-index: 999;
+    height: 4rem;
   }
 }
 

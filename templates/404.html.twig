@@ -16,21 +16,17 @@
 {% endif %}
 <div class="main page404">
   <section class="container-c">
-    {{ page.content }}
-    <p class="frase"  [text]="t">¿Dónde estará la página?<br>Pulsa en las cartas para mezclar</p>
+    <h1>Ups... 404</h1>
+    <h2 class="frase"  [text]="t">¿Dónde estará la página?<br>Pulsa en las cartas para buscarla</h2>
 
     <div class="menu_alt" [class]="'menu_alt ' + menu">
-      <h3></h3>
-      <a href="{{ home_url }}">INICIO</a>
-      <a href="{{ base_url }}/porfolio">PORFOLIO</a>
-      <a href="{{ base_url }}/blog">BLOG</a>
-      <a href="{{ base_url }}/contacto">CONTACTO</a>
+      {% include 'partials/menu.html.twig' %}
     </div>
 
     <div class="tablero">
-      <a class="card inicio card1 l" [class]="'card card1 ' + card + c1" on="tap:AMP.setState({t:'Lo siento, has perdido ;), pero te ayudo a buscar', card: 'muestra ', c1: c1 + ' active', overlay2: 'overlay2 visible', menu: 'menu_alt visible'})">4</a>
-      <a class="card inicio card2 " [class]="'card card2 ' + card + c2" on="tap:AMP.setState({t:'¡Genial! Has ganado, te ayudo a buscar', card: 'muestra ', c2: c2 + ' active', overlay2: 'overlay2 visible', menu: 'menu_alt visible'})">0</a>
-      <a class="card inicio card3 r" [class]="'card card3 ' + card + c3" on="tap:AMP.setState({t:'Lo siento, has perdido ;), pero te ayudo a buscar', card: 'muestra ', c3: c3 + ' active', overlay2: 'overlay2 visible', menu: 'menu_alt visible'})">4</a>
+      <a class="card inicio card1 l" [class]="'card card1 ' + card + c1" on="tap:AMP.setState({t:'Lo siento, has perdido ;), entra en alguna de mis secciones.', card: 'muestra ', c1: c1 + ' active', overlay2: 'overlay2 visible', menu: 'menu_alt visible'})">4</a>
+      <a class="card inicio card2 " [class]="'card card2 ' + card + c2" on="tap:AMP.setState({t:'¡Genial! Has ganado, entra en alguna de mis secciones', card: 'muestra ', c2: c2 + ' active', overlay2: 'overlay2 visible', menu: 'menu_alt visible'})">0</a>
+      <a class="card inicio card3 r" [class]="'card card3 ' + card + c3" on="tap:AMP.setState({t:'Lo siento, has perdido ;), entra en alguna de mis secciones.', card: 'muestra ', c3: c3 + ' active', overlay2: 'overlay2 visible', menu: 'menu_alt visible'})">4</a>
       <button class="overlay" [class]="'' + overlay" on="tap:AMP.setState({overlay: 'hide', card: 'reves', c1: ' {{c1}}', c2: ' {{c2}}', c3: ' {{c3}}', t: 'Vamos allá, encuentra el 0'})"></button>
       <button class="overlay2" [class]="'' + overlay2"></button>
     </div>

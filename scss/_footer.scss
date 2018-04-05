@@ -9,7 +9,7 @@ footer {
   padding-top: 3em;
   -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
-  padding: 2em 0;
+  padding: 3em 0 1em;
   font-family: $font2;
   .left {
     float: left;
@@ -28,8 +28,12 @@ footer {
     width: 1em;
     color: transparent;
 
-    span:before {
+    span {
       color: $cNegro;
+    }
+
+    &:hover {
+      color: transparent;
     }
   }
 }

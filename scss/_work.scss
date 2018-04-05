@@ -84,12 +84,20 @@
     a {
       text-decoration: none;
       display: inline-block;
+      width: 1em;
+      overflow: hidden;
       transition: all 0.2s ease;
       padding: 0.5em;
+      color: transparent;
+      em {
+        color: $cNegro;
+      }
       &:hover {
         background: inherit;
-        color: initial;
         transform: scale(1.4) rotate(15deg);
+        em {
+          color: initial;
+        }
       }
     }
   }
