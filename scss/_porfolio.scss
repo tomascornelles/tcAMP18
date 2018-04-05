@@ -2,7 +2,7 @@
   position: relative;
   .scroll {
     height: 30vw;
-    min-height: 15em;
+    min-height: 12.5em;
     position: absolute;
     left: 0;
     right: 0;
@@ -48,6 +48,7 @@
   font-size: 1rem;
   padding: 0.5em 1em;
   transition: all 0.4s ease;
+  box-shadow: 0 0 .5em rgba(0,0,0,.2);
 
   &:hover {
     background: $cNegro;
@@ -128,6 +129,7 @@
   &:hover {
     transform: scale(1.05);
     z-index: 99;
+    box-shadow: 0 0 .5em rgba(0,0,0,.8)
   }
 }
 .recent-posts {
