@@ -24,6 +24,7 @@ form:
               type: list
               style: vertical
               label: Client logos
+              collapsed: true
               fields:
                 .text:
                   type: text
@@ -36,3 +37,7 @@ form:
                   label: Client logo image
                   folder: '@self'
                   preview_images: true
+                  
+            header.seo_description:
+              type: textarea
+              label: SEO description
